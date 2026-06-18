@@ -1,72 +1,2280 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orgulho Trans</title>
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
-<body>
-   
- <main class="container pt-5">
+<html lang="pt-BR">
 
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Trans pride! O vasto universo da comunidade Trans: conheça além do que se vê</a>
-           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#home">Inicial</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#informativo">Informativo</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#Saibalutas">Saiba das lutas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#entretenimento">Entretenimento</a>
-              </li>
-               <li class="nav-item">
-                <a class="nav-link" href="#ongs">Conheça as ONG's</a>
-              </li>
-            </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trans Pride, Trans Light — Comunidade & Acolhimento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* ── Tokens ────────────────────────────────────────── */
+    :root {
+      --blue: #74bfeb;
+      --blue-light: #7B9DC7;
+      --pink: #ff93c0;
+      --pink-light: #fdbbc1;
+      --white: #FFFFFF;
+      --surface: #F7F7F9;
+      --surface-2: #EFEFF3;
+      --text: #1C1C2E;
+      --text-muted: #6B6B80;
+      --border: #E2E2EA;
+      --radius: 12px;
+      --transition: 0.3s ease;
+    }
+
+    /* ── Reset ─────────────────────────────────────────── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ── Signature gradient line ────────────────────────── */
+    .gradient-line {
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--blue-light), var(--pink-light), var(--pink));
+    }
+
+    /* ── Nav ────────────────────────────────────────────── */
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #ffffff;
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      background: var(--blue);
+      color: var(--white) !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: 6px;
+      transition: background var(--transition) !important;
+    }
+
+    .nav-cta:hover {
+      background: #3a5f95 !important;
+      color: var(--white) !important;
+    }
+
+    /* ── Hero ───────────────────────────────────────────── */
+    #inicio {
+      background: var(--surface);
+      background-color: #ffe3fb;
+      padding: 6rem 2rem 5rem;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--text);
+      max-width: 720px;
+      margin: 0 auto 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--blue);
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      padding: 0.75rem 1.75rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    .btn-primary:hover {
+      background: #3a5f95;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      padding: 0.75rem 1.75rem;
+      border-radius: var(--radius);
+      font-weight: 500;
+      font-size: 0.9rem;
+      border: 1.5px solid var(--border);
+      transition: border-color var(--transition), transform var(--transition);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      transform: translateY(-1px);
+    }
+
+    /* ── Section commons ────────────────────────────────── */
+    section {
+      padding: 5rem 2rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      max-width: 560px;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-body {
+      color: var(--text-muted);
+      max-width: 560px;
+      line-height: 1.8;
+    }
+
+    /* ── Sobre ──────────────────────────────────────────── */
+    #sobre {
+      background-color: #afdffc;
+    }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .sobre-visual {
+      position: relative;
+    }
+
+    .sobre-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      border-left: 4px solid var(--blue);
+    }
+
+    .sobre-card p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      line-height: 1.6;
+      color: var(--text);
+      font-style: italic;
+    }
+
+    .sobre-card cite {
+      display: block;
+      margin-top: 1rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-style: normal;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .sobre-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat-box {
+      background: var(--surface-2);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--blue);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+    }
+
+    /* ── Apoio ──────────────────────────────────────────── */
+    #apoio {
+      background: var(--surface);
+      background-color: #ffe3fb;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      border: 1px solid var(--border);
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 32px rgba(74, 111, 165, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--blue);
+      transition: gap var(--transition);
+    }
+
+    .card-link:hover {
+      gap: 0.6rem;
+    }
+
+    /* ── Comunidade ─────────────────────────────────────── */
+    #comunidade {
+      background: var(--white);
+      background-color:#afdffc;
+    }
+
+    .community-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .testimonials {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .testimonial {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      border-top: 3px solid var(--pink-light);
+    }
+
+    .testimonial p {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 0.75rem;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+
+    .av-blue {
+      background: var(--blue);
+    }
+
+    .av-pink {
+      background: var(--pink);
+    }
+
+    .av-slate {
+      background: #6B7DB3;
+    }
+
+    .author-info strong {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .author-info span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Direitos ───────────────────────────────────────── */
+    #direitos {
+      background: var(--surface);
+      background-color:#ffe3fb;
+    }
+
+    .direitos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .direito-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1.25rem;
+      background: var(--white);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      align-items: flex-start;
+    }
+
+    .direito-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .direito-item h4 {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .direito-item p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── Contato ────────────────────────────────────────── */
+    #contato {
+      background: var(--white);
+      background-color: #afdffc;
+    }
+
+    .contato-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 0.7rem 0.9rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color var(--transition);
+      outline: none;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue);
+    }
+
+    .form-group textarea {
+      min-height: 110px;
+    }
+
+    .form-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: -0.25rem;
+    }
+
+    .contato-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .contato-info p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+      line-height: 1.8;
+    }
+
+    .contact-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .channel {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+    }
+
+    .channel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--blue);
+      flex-shrink: 0;
+    }
+
+    .channel span {
+      color: var(--text-muted);
+    }
+
+    .channel a {
+      color: var(--blue);
+      font-weight: 500;
+    }
+
+    /* ── Footer ─────────────────────────────────────────── */
+    footer {
+      background: var(--text);
+      color: rgba(255, 255, 255, 0.55);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-logo span {
+      color: var(--blue-light);
+    }
+
+    footer p {
+      font-size: 0.82rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      list-style: none;
+      margin: 1.25rem 0;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.45);
+      transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    /* ── Responsive ─────────────────────────────────────── */
+    @media (max-width: 768px) {
+      nav {
+        padding: 0 1.25rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      section {
+        padding: 3.5rem 1.25rem;
+      }
+
+      .sobre-grid,
+      .community-layout,
+      .contato-inner,
+      .direitos-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sobre-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      #inicio {
+        padding: 4rem 1.25rem 3rem;
+      }
+    }
+
+    /* ── Blog ───────────────────────────────────────────── */
+    #blog {
+      background: var(--white);
+      background-color: #ffe3fb;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .blog-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: box-shadow var(--transition), transform var(--transition);
+      background: var(--white);
+    }
+
+    .blog-card:hover {
+      box-shadow: 0 8px 32px rgba(74, 111, 165, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .blog-thumb {
+      width: 100%;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+
+    .thumb-blue {
+      background: #a6c6ff;
+    }
+
+    .thumb-pink {
+      background: #ffa8c9;
+    }
+
+    .thumb-slate {
+      background: #d3a5ff;
+    }
+
+    .blog-body {
+      padding: 1.5rem;
+    }
+
+    .blog-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: #EEF2F9;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+    }
+
+    .blog-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 0.6rem;
+    }
+
+    .blog-card p {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .blog-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .blog-read {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--blue);
+      transition: letter-spacing var(--transition);
+    }
+
+    .blog-read:hover {
+      letter-spacing: 0.03em;
+    }
+
+    .blog-link {
+      font-size: 0.78rem;
+      color: var(--blue);
+    }
+
+    /* ── FAQ ────────────────────────────────────────────── */
+    #faq {
+      background: var(--surface);
+      background-color: #afdffc;
+    }
+
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      text-align: left;
+      transition: background var(--transition);
+    }
+
+    .faq-question:hover {
+      background: var(--surface);
+    }
+
+    .faq-question[aria-expanded="true"] {
+      color: var(--blue);
+    }
+
+    .faq-icon {
+      flex-shrink: 0;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      transition: transform var(--transition);
+    }
+
+    .faq-question[aria-expanded="true"] .faq-icon {
+      transform: rotate(45deg);
+      color: var(--blue);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.25rem 1.1rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .faq-answer.open {
+      display: block;
+    }
+
+    /* ── Glossário ──────────────────────────────────────── */
+    #glossario {
+      background: var(--white);
+      background-color: #ffe3fb;
+    }
+
+    .glossario-search-wrap {
+      margin: 2rem 0 1.5rem;
+      position: relative;
+      max-width: 420px;
+    }
+
+    .glossario-search {
+      width: 100%;
+      padding: 0.7rem 0.9rem 0.7rem 2.5rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color var(--transition);
+    }
+
+    .glossario-search:focus {
+      border-color: var(--blue);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+
+    .glossario-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .glossario-item {
+      background: var(--surface);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      border-left: 3px solid var(--blue-light);
+      transition: border-color var(--transition);
+    }
+
+    .glossario-item:hover {
+      border-left-color: var(--blue);
+    }
+
+    .glossario-item.hidden {
+      display: none;
+    }
+
+    .glossario-term {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--blue);
+      margin-bottom: 0.35rem;
+    }
+
+    .glossario-def {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .glossario-empty {
+      display: none;
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    /* ── Doação banner ──────────────────────────────────── */
+    .donate-banner {
+      background: linear-gradient(135deg, #EEF2F9 0%, #F9EEF0 100%);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+      border: 1px solid var(--border);
+    }
+
+    .donate-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .donate-text p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      max-width: 460px;
+    }
+
+    .donate-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    /* ── Social icons no footer ─────────────────────────── */
+    .footer-social {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      margin: 1.25rem 0 0.5rem;
+    }
+
+    .social-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: background var(--transition), transform var(--transition);
+      color: rgba(255, 255, 255, 0.959);
+    }
+
+    .social-icon:hover {
+      background: rgba(255, 255, 255, 0.18);
+      transform: translateY(-2px);
+      color: var(--white);
+    }
+
+    /* ── Responsive additions ───────────────────────────── */
+    @media (max-width: 768px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .glossario-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .donate-banner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cultura-tabs {
+        flex-wrap: wrap;
+      }
+
+      .cultura-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .artistas-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* ── Cultura ────────────────────────────────────────── */
+    #cultura {
+      background: var(--surface);
+      background-color: #afdffc;
+    }
+
+    .cultura-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin: 2.5rem 0 2rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: color var(--transition), border-color var(--transition);
+      white-space: nowrap;
+    }
+
+    .tab-btn:hover {
+      color: var(--text);
+    }
+
+    .tab-btn.active {
+      color: var(--blue);
+      border-bottom-color: var(--blue);
+    }
+
+    .cultura-panel {
+      display: none;
+    }
+
+    .cultura-panel.active {
+      display: block;
+    }
+
+    /* Artistas */
+    .artistas-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    .artista-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2.0rem 2.0rem;
+      text-align: center;
+      border: 1px solid var(--border);
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .artista-card:hover {
+      box-shadow: 0 6px 24px rgba(74, 111, 165, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .artista-card h3 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+      min-height: 1.5rem;
+      line-height: 1.4;
+      color:#33334de7;
+    }
+
+    .artista-card .artista-tipo {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.6rem;
+    }
+
+    .artista-card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Músicas */
+    .musicas-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .musica-item {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      border: 1px solid var(--border);
+      transition: box-shadow var(--transition);
+    }
+
+    .musica-item:hover {
+      box-shadow: 0 4px 16px rgba(74, 111, 165, 0.08);
+    }
+
+    .musica-num {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      width: 20px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .musica-cover {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .musica-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .musica-info strong {
+      display: block;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .musica-info span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .musica-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .tag-blue {
+      background: #c8deff;
+      color: var(--blue);
+    }
+
+    .tag-pink {
+      background: #ffd6e7;
+      color: var(--pink);
+    }
+
+    .tag-slate {
+      background: #c1c1ff;
+      color: #5B6BAF;
+    }
+
+    /* Livros */
+    .cultura-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .livro-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .livro-card:hover {
+      box-shadow: 0 6px 24px rgba(74, 111, 165, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .livro-capa {
+      height: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+
+    .livro-body {
+      padding: 1.25rem;
+    }
+
+    .livro-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      line-height: 1.3;
+    }
+
+    .livro-autor {
+      font-size: 0.78rem;
+      color: var(--blue);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .livro-body p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Pinturas / Arte Visual */
+    .arte-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .arte-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .arte-card:hover {
+      box-shadow: 0 6px 24px rgba(74, 111, 165, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .arte-thumb {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .arte-body {
+      padding: 1.25rem;
+    }
+
+    .arte-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      font-style: italic;
+    }
+
+    .arte-artista {
+      font-size: 0.78rem;
+      color: var(--pink);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .arte-body p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .arte-ano {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    /* ── Reduced motion ─────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Signature top line ── -->
+  <div class="gradient-line"></div>
+
+  <!-- ── Header ── -->
+  <header>
+    <nav>
+      <div class="logo">Trans Pride, <span>Trans Light</span></div>
+      <ul class="nav-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#apoio">Apoio</a></li>
+        <li><a href="#comunidade">Comunidade</a></li>
+        <li><a href="#cultura">Cultura</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#glossario">Glossário</a></li>
+        <li><a href="#contato" class="nav-cta">Fale Conosco</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ── Hero ── -->
+  <section id="inicio">
+    <div class="container">
+      <span class="hero-eyebrow">Comunidade Transgênero</span>
+      <h1 class="hero-title">Um espaço onde cada <em>história</em> merece ser ouvida</h1>
+      <p class="hero-subtitle">
+        Informação, acolhimento e comunidade para pessoas trans e suas redes de apoio no Brasil.
+      </p>
+      <div class="hero-actions">
+        <a href="#apoio" class="btn-primary">Encontre Apoio</a>
+        <a href="#comunidade" class="btn-secondary">Conheça a Comunidade</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="gradient-line"></div>
+
+  <!-- ── Sobre ── -->
+  <section id="sobre">
+    <div class="container">
+      <div class="sobre-grid">
+        <div>
+          <p class="section-label">Quem somos:</p>
+          <h2 class="section-title">a luz de cada identidade é força</h2>
+          <p class="section-body">
+            A Trans Pride, Trans Light é um espaço digital criado por adolescentes em formação, com objetivo de 
+            oferecer informação acessível, recursos confiáveis
+            e acolhimento genuíno para pessoas transgênero, seus familiares e aliados.
+            Acreditamos que visibilidade e conhecimento são ferramentas de transformação,
+            por isso, essa plataforma convida a todos para refletir e observar, com calma,
+            a beleza, importância, luta e força que cada pessoa trans carrega, e que isso 
+            é motivo de orgulho.
+          </p>
+          <p class="section-body" style="margin-top:1rem;">
+            Nossa missão é construir pontes — entre pessoas, saberes e entre a comunidade
+            e a atenção que se faz necessária, mas é invisibilizada.
+          </p>
+          <div class="sobre-stats">
+            <div class="stat-box">
+              <div class="stat-number">1,9M</div>
+              <div class="stat-label">Pessoas trans no Brasil estimadas</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">+200</div>
+              <div class="stat-label">Recursos e serviços mapeados</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">27</div>
+              <div class="stat-label">Estados com informações locais</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">24h</div>
+              <div class="stat-label">Canal de escuta disponível</div>
+            </div>
           </div>
         </div>
-      </nav>
-<section id="home" class="container p-5 my-0 bg-primary text-white">
-        <h1>Trans Pride! O vasto universo da comunidade Trans: conheça além do que se vê</h1>
-         texto foda
-    </section>
-    <section id="quemsou" class="container p-5 my-5 bg-dark text-white">
-        conteudo quem sou
-        <br>
-        <!-- Carousel -->
-<div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <div class="sobre-visual">
+          <div class="sobre-card">
+            <p>"Ser trans não é uma escolha de estilo de vida. É reconhecer quem você sempre foi e ter a coragem de
+              viver essa verdade em voz alta."</p>
+            <cite>— Trans Pride, Trans Light</cite>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Indicators/dots -->
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-  </div>
-  
-  <!-- The slideshow/carousel -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="erikaeurias.jpg" alt="Érika Hilton  Urias" class="d-block" style="width:100%">
+  <!-- ── Apoio ── -->
+  <section id="apoio">
+    <div class="container">
+      <p class="section-label">Recursos & Suporte</p>
+      <h2 class="section-title">Você não precisa percorrer esse caminho só</h2>
+      <p class="section-body">
+        Reunimos recursos como saúde, apoio jurídico, assistência social e saúde mental para que você encontre o que
+        precisa com facilidade, além de nossa plataforma proporcionar um local de aprendizado aos aliados ou não
+        conhecedores da causa.
+      </p>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🏥</div>
+          <h3>Saúde Integral</h3>
+          <p>Informações sobre o Processo Transexualizador do SUS, hormonização, cirurgias e acesso a profissionais de
+            saúde afirmativos.</p>
+          <a href="#contato" class="card-link">Saiba mais →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚖️</div>
+          <h3>Direitos Legais</h3>
+          <p>Guia prático para retificação de nome e gênero em documentos, orientações jurídicas e atualização de
+            registros civis.</p>
+          <a href="#direitos" class="card-link">Ver guia →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">💬</div>
+          <h3>Saúde Mental</h3>
+          <p>Rede de psicólogos e psiquiatras trans-afirmativos, grupos de apoio e recursos de cuidado emocional
+            acessíveis.</p>
+          <a href="#contato" class="card-link">Encontrar apoio →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏠</div>
+          <h3>Assistência Social</h3>
+          <p>Mapeamento de casas de acolhimento, serviços do CRAS e CREAS, e organizações de apoio à moradia e renda.
+          </p>
+          <a href="#contato" class="card-link">Ver recursos →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">📚</div>
+          <h3>Educação & Trabalho</h3>
+          <p>Oportunidades de capacitação, programas de inserção no mercado de trabalho e combate à discriminação
+            profissional.</p>
+          <a href="#contato" class="card-link">Explorar →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">👨‍👩‍👧</div>
+          <h3>Apoio à Família</h3>
+          <p>Materiais informativos, grupos de acolhimento e orientação para familiares que desejam entender e apoiar
+            seus entes trans.</p>
+          <a href="#contato" class="card-link">Para famílias →</a>
+        </div>
+      </div>
     </div>
-    <div class="carousel-item">
-      <img src="geniopera.jpg" alt="Geni - Ópera do malandro" class="d-block" style="width:100%">
+  </section>
+
+  <!-- ── Comunidade ── -->
+  <section id="comunidade">
+    <div class="container">
+      <div class="community-layout">
+        <div>
+          <p class="section-label">Vozes da comunidade</p>
+          <h2 class="section-title">Histórias reais de pessoas reais</h2>
+          <p class="section-body">
+            Cada trajetória trans é única e merece ser contada. Aqui compartilhamos fragmentos de experiências
+            com respeito e cuidado, para que ninguém se sinta sozinhe nessa jornada.
+          </p>
+          <a href="#contato" class="btn-primary" style="display:inline-block; margin-top:1.75rem;">Compartilhe sua
+            história</a>
+        </div>
+        <div class="testimonials">
+          <div class="testimonial">
+            <p>"Quando encontrei a comunidade, percebi que não estava sozinha. Ter pessoas que entendem sua experiência
+              muda tudo — você para de sobreviver e começa a viver."</p>
+            <div class="testimonial-author">
+              <div class="avatar av-blue">MA</div>
+              <div class="author-info">
+                <strong>Marina A.</strong>
+                <span>Mulher trans · São Paulo</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial">
+            <p>"As informações sobre retificação de nome me pouparam meses de confusão. Documentação clara e acessível
+              faz diferença real na vida de alguém."</p>
+            <div class="testimonial-author">
+              <div class="avatar av-slate">LR</div>
+              <div class="author-info">
+                <strong>Lucas R.</strong>
+                <span>Homem trans · Recife</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial">
+            <p>"Como mãe, precisei aprender muito. Os materiais para familiares me ajudaram a apoiar minha filha da
+              forma que ela merecia desde o início."</p>
+            <div class="testimonial-author">
+              <div class="avatar av-pink">CF</div>
+              <div class="author-info">
+                <strong>Cláudia F.</strong>
+                <span>Mãe aliada · Belo Horizonte</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="carousel-item">
-      <img src="nickcruz.webp" alt="Nick Cruz" class="d-block" style="width:100%">
+  </section>
+
+  <!-- ── Direitos ── -->
+  <section id="direitos">
+    <div class="container">
+      <p class="section-label">Informação é poder</p>
+      <h2 class="section-title">Seus direitos no Brasil</h2>
+      <p class="section-body">
+        Conheça os principais marcos legais e direitos assegurados às pessoas trans pela legislação brasileira e
+        decisões do STF.
+      </p>
+      <div class="direitos-grid">
+        <div class="direito-item">
+          <div class="direito-icon">𓍝</div>
+          <div>
+            <h4>Retificação de Registro Civil</h4>
+            <p>Decisão do STF (2018) garante o direito à mudança de nome e gênero em documentos sem necessidade de
+              cirurgia ou laudo médico.</p>
+          </div>
+        </div>
+        <div class="direito-item">
+          <div class="direito-icon">⚧</div>
+          <div>
+            <h4>Processo Transexualizador no SUS</h4>
+            <p>O SUS oferece acompanhamento multiprofissional, hormonioterapia e cirurgias de redesignação sexual pelo
+              sistema público de saúde.</p>
+          </div>
+        </div>
+        <div class="direito-item">
+          <div class="direito-icon">⌕</div>
+          <div>
+            <h4>Criminalização da LGBTfobia</h4>
+            <p>O STF equiparou a LGBTfobia ao crime de racismo (2019), oferecendo proteção legal contra discriminação e
+              violência motivadas por identidade de gênero.</p>
+          </div>
+        </div>
+        <div class="direito-item">
+          <div class="direito-icon">♂♀</div>
+          <div>
+            <h4>Uso de Banheiro por Identidade</h4>
+            <p>Pessoas trans têm o direito de utilizar banheiros e vestiários de acordo com sua identidade de gênero em
+              espaços públicos e privados.</p>
+          </div>
+        </div>
+        <div class="direito-item">
+          <div class="direito-icon">✍︎</div>
+          <div>
+            <h4>Proteção no Ambiente de Trabalho</h4>
+            <p>Discriminação por identidade de gênero no trabalho é proibida. Empresas devem usar o nome social da
+              colaboradora desde a admissão.</p>
+          </div>
+        </div>
+        <div class="direito-item">
+          <div class="direito-icon">✎</div>
+          <div>
+            <h4>Nome Social em Instituições</h4>
+            <p>Portaria do MEC garante o uso do nome social de estudantes trans em documentos e chamadas em instituições
+              de ensino públicas federais.</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <!-- ── Cultura ── -->
+  <section id="cultura">
+    <div class="container">
+      <p class="section-label">Arte, vidas & expressão</p>
+      <h2 class="section-title">Cultura Trans: olhares que transformam o mundo</h2>
+      <p class="section-body">
+        Da música à literatura, das artes visuais às artes cênicas — a comunidade trans sempre esteve na vanguarda da
+        criação artística e cultural.
+      </p>
+
+      <!-- Tabs -->
+      <div class="cultura-tabs">
+        <button class="tab-btn active" onclick="switchTab(this, 'artistas')">📽 Artistas</button>
+        <button class="tab-btn" onclick="switchTab(this, 'musicas')">♫ Músicas</button>
+        <button class="tab-btn" onclick="switchTab(this, 'livros')">🕮 Livros</button>
+        <button class="tab-btn" onclick="switchTab(this, 'arte')">𓂃🖌 Artes Visuais</button>
+      </div>
+
+      <!-- Painel: Artistas -->
+      <div class="cultura-panel active" id="panel-artistas">
+        <div class="artistas-grid">
+          <div class="artista-card">
+            <div class="artista-avatar" style="background:#EEF2F9;"><img src="linn.webp"></div>
+            <h3>Linn da Quebrada</h3>
+            <div class="artista-tipo">Música · Atriz</div>
+            <p>Cantora, compositora e atriz brasileira, referência em funk e arte transgressora. Criadora do manifesto
+              "Bicharada".</p>
+          </div>
+          <div class="artista-card">
+            <div class="artista-avatar" style="background:#F9EEF0;"><img src="amaramoira.webp"></div>
+            <h3>Amara Moira</h3>
+            <div class="artista-tipo">Escritora · Ativista</div>
+            <p>Doutora em Literatura, escritora e ativista trans. Autora de "E Se Eu Fosse Puta", obra fundamental da
+              literatura trans brasileira.</p>
+          </div>
+          <div class="artista-card">
+            <div class="artista-avatar" style="background:#EEEEF9;"><img src="indianarae.webp"></div>
+            <h3>Indianarae Siqueira</h3>
+            <div class="artista-tipo">Atriz · Política</div>
+            <p>Atriz, ativista e ex-vereadora do Rio de Janeiro. Pioneira na representação política e artística da
+              comunidade trans.</p>
+          </div>
+          <div class="artista-card">
+            <div class="artista-avatar" style="background:#EEF2F9;"><img src="venturaprofana.webp"></div>
+            <h3>Ventura Profana</h3>
+            <div class="artista-tipo">Artista Visual · Música</div>
+            <p>Artista multimídia afro-trans nordestina, reconhecida pelo uso da arte como ferramenta de resistência e
+              espiritualidade.</p>
+          </div>
+          <div class="artista-card">
+            <div class="artista-avatar" style="background:#F9EEF0;"><img src="fefalins.webp"></div>
+            <h3>Fefa Lins</h3>
+            <div class="artista-tipo">Pintor</div>
+            <p>Pintor transmasculino e não-binário, retrata, por meo das artes plásticas, as sensações e emoções que
+              representam a comunidade de maneira sutil e, ao mesmo tempo, poderosa.
+            </p>
+          </div>
+          <div class="artista-card">
+            <div class="artista-avatar" style="background:#EEEEF9;"><img src="samporto.webp"></div>
+            <h3>Sam Porto</h3>
+            <div class="artista-tipo">Modelo · Tatuador</div>
+            <p>Modelo, primeiro homem trans a desfilar na "São Paulo Fashion Week", em 2019, utiliza da moda como 
+              meio de protesto e luta a favor de sua comunidade. 
+            </p>
+          </div>
+          <div class="artista-card">
+            <div class="artista-avatar" style="background:#EEF2F9;"><img src="laerte.webp"></div>
+            <h3>Laerte Coutinho</h3>
+            <div class="artista-tipo">Quadrinista</div>
+            <p>Uma das maiores cartunistas do Brasil, Laerte é trans e usa suas tiras para refletir sobre identidade,
+              humor e existência.</p>
+          </div>
+          <div class="artista-card">
+            <div class="artista-avatar" style="background:#F9EEF0;"><img src="Dante-Olivier.jpg"></div>
+            <h3>Dante Olivier</h3>
+            <div class="artista-tipo">Dançarino · Ator</div>
+            <p>Ator, dançarino, é também um influencer que ganhou espaço na mídia por falar de suas vivências e 
+              utilizar das redes sociais como apoio para transmasculinos, como ele, e trangênero como um todo.
+           </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel: Músicas -->
+      <div class="cultura-panel" id="panel-musicas">
+        <div class="musicas-list">
+          <div class="musica-item">
+            <span class="musica-num">01</span>
+            <div class="musica-cover" style="background:#EEF2F9;"><img src="bixatravesty.webp"></div>
+            <div class="musica-info">
+              <strong><a href="https://youtu.be/re0ZRpQbhdI?si=HUD7anUR2tXntoZ5">Bixa Travesty</a></strong>
+              <span>Linn da Quebrada • Álbum: Pajubá (2017)</span>
+            </div>
+            <span class="musica-tag tag-blue">Funk</span>
+          </div>
+          <div class="musica-item">
+            <span class="musica-num">02</span>
+            <div class="musica-cover" style="background:#F9EEF0;"><img src="against_me.webp"></div>
+            <div class="musica-info">
+              <strong><a href="https://youtu.be/ObjaGwlUEUE?si=WH6OoOtqaQ8fio6p">True Trans Soul Rebel</a></strong>
+              <span>Against Me! • Álbum: Transgender Dysphoria Blues (2014)</span>
+            </div>
+            <span class="musica-tag tag-pink">Punk Rock</span>
+          </div>
+          <div class="musica-item">
+            <span class="musica-num">03</span>
+            <div class="musica-cover" style="background:#EEEEF9;"><img src="song_about_you.webp"></div>
+            <div class="musica-info">
+              <strong><a href="https://youtu.be/kCzuJIBwuIs?si=ntSQXGvr0Eg1xTbw">A Shitty Gay Song About You</a></strong>
+              <span>Ezra Williams • Single (2018)</span>
+            </div>
+            <span class="musica-tag tag-slate">Indie-pop</span>
+          </div>
+          <div class="musica-item">
+            <span class="musica-num">04</span>
+            <div class="musica-cover" style="background:#EEF2F9;"><img src="equilibrivm.webp"></div>
+            <div class="musica-info">
+              <strong><a href="https://youtu.be/2zoRomLIZE4?si=Q3d4bGVWsAk-8bWX">Caminhador</a></strong>
+              <span>Liniker (feat. Anitta) • Álbum: EQUILIBRIVM (2026)</span>
+            </div>
+            <span class="musica-tag tag-blue">Afrobeat</span>
+          </div>
+          <div class="musica-item">
+            <span class="musica-num">05</span>
+            <div class="musica-cover" style="background:#F9EEF0;"><img src="dysphoria_blues.jpg"></div>
+            <div class="musica-info">
+              <strong><a href="https://youtu.be/zccutrnwZn4?si=-TQ1CJv-vC1q9AYh">Transgender Dysphoria Blues</a></strong>
+              <span>Against Me! • Álbum homônimo (2014)</span>
+            </div>
+            <span class="musica-tag tag-pink">Punk Rock</span>
+          </div>
+          <div class="musica-item">
+            <span class="musica-num">06</span>
+            <div class="musica-cover" style="background:#EEEEF9;"><img src="animal_kingdom.jpg"></div>
+            <div class="musica-info">
+              <strong><a href="https://youtu.be/uREGk0fT0GQ?si=tmCwdQcv83tqWkJ0">Boys will be bugs</a></strong>
+              <span>Cavetown • Álbum: Animal Kingdom (2019)</span>
+            </div>
+            <span class="musica-tag tag-slate">Indie-pop</span>
+          </div>
+          <div class="musica-item">
+            <span class="musica-num">07</span>
+            <div class="musica-cover" style="background:#EEF2F9;"><img src="junior.webp"></div>
+            <div class="musica-info">
+              <strong><a href="https://youtu.be/cfpg9qfzvlw?si=nUuXKhGMbPWpqo1X">eu matei o Júnior</a></strong>
+              <span>Ventura Profana • Trava Línguas (2021)</span>
+            </div>
+            <span class="musica-tag tag-blue">Eletrônico-experimental</span>
+          </div>
+          <div class="musica-item">
+            <span class="musica-num">08</span>
+            <div class="musica-cover" style="background:#F9EEF0;"><img src="SolNoPeito.jfif"></div>
+            <div class="musica-info">
+              <strong><a href="https://youtu.be/1Lg-XL9xYkA?si=kVEj5-gXbkyBL61u">Sol no peito</a></strong>
+              <span>Nick Cruz • Single (2021)</span>
+            </div>
+            <span class="musica-tag tag-pink">R&B</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel: Livros -->
+      <div class="cultura-panel" id="panel-livros">
+        <div class="cultura-grid">
+          <div class="livro-card">
+            <div class="livro-capa" style="background:#EEF2F9;">📖</div>
+            <div class="livro-body">
+              <h3>E Se Eu Fosse Puta</h3>
+              <div class="livro-autor">Amara Moira · 2016</div>
+              <p>Obra seminal da literatura trans brasileira, que narra experiências de prostituição, identidade e
+                resistência com profundidade literária.</p>
+            </div>
+          </div>
+          <div class="livro-card">
+            <div class="livro-capa" style="background:#F9EEF0;">📚</div>
+            <div class="livro-body">
+              <h3>Minha Vida nas Estrelas</h3>
+              <div class="livro-autor">Jazz Jennings · 2016</div>
+              <p>Memórias de uma das ativistas trans mais jovens do mundo, relatando sua jornada de vida com leveza e
+                coragem desde a infância.</p>
+            </div>
+          </div>
+          <div class="livro-card">
+            <div class="livro-capa" style="background:#EEEEF9;">📕</div>
+            <div class="livro-body">
+              <h3>Redefining Realness</h3>
+              <div class="livro-autor">Janet Mock · 2014</div>
+              <p>Memoir poderoso da escritora e ativista americana Janet Mock sobre crescer como mulher negra e trans
+                nos EUA.</p>
+            </div>
+          </div>
+          <div class="livro-card">
+            <div class="livro-capa" style="background:#EEF2F9;">📗</div>
+            <div class="livro-body">
+              <h3>A Solidão de Ser</h3>
+              <div class="livro-autor">Indianara Lima · 2020</div>
+              <p>Poesia que atravessa a experiência trans periférica com beleza e denúncia, consolidando a autora como
+                voz urgente da literatura brasileira.</p>
+            </div>
+          </div>
+          <div class="livro-card">
+            <div class="livro-capa" style="background:#F9EEF0;">📘</div>
+            <div class="livro-body">
+              <h3>Surpassing Certainty</h3>
+              <div class="livro-autor">Janet Mock · 2017</div>
+              <p>Continuação de "Redefining Realness", explorando os anos de construção de carreira e identidade da
+                autora em Nova York.</p>
+            </div>
+          </div>
+          <div class="livro-card">
+            <div class="livro-capa" style="background:#EEEEF9;">📙</div>
+            <div class="livro-body">
+              <h3>Becoming Nicole</h3>
+              <div class="livro-autor">Amy Ellis Nutt · 2015</div>
+              <p>A história real de uma menina trans e sua família, que enfrentou a escola, o sistema e transformou a
+                lei americana.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel: Arte Visual -->
+      <div class="cultura-panel" id="panel-arte">
+        <div class="arte-grid">
+          <div class="arte-card">
+            <div class="arte-thumb" style="background: linear-gradient(135deg,#EEF2F9,#EEEEF9);">🖼️</div>
+            <div class="arte-body">
+              <h3>Série "Corpos que Importam"</h3>
+              <div class="arte-artista">Ventura Profana</div>
+              <p>Série fotográfica e instalação que examina corpos trans negros a partir da espiritualidade
+                afro-brasileira e da resistência ancestral.</p>
+              <div class="arte-ano">2019 · Fotografia & Instalação</div>
+            </div>
+          </div>
+          <div class="arte-card">
+            <div class="arte-thumb" style="background: linear-gradient(135deg,#F9EEF0,#EEF2F9);">🎭</div>
+            <div class="arte-body">
+              <h3>Laerte: Tiras e Identidade</h3>
+              <div class="arte-artista">Laerte Coutinho</div>
+              <p>Décadas de quadrinhos que narram a descoberta da identidade trans com humor, poesia e crítica social —
+                um arquivo vivo da transição pública.</p>
+              <div class="arte-ano">2010–presente · Quadrinhos</div>
+            </div>
+          </div>
+          <div class="arte-card">
+            <div class="arte-thumb" style="background: linear-gradient(135deg,#EEEEF9,#F9EEF0);">🌈</div>
+            <div class="arte-body">
+              <h3>Por Dentro da Carne</h3>
+              <div class="arte-artista">Yuri Firmeza</div>
+              <p>Instalação videográfica que investiga a construção do corpo trans como espaço político e poético,
+                exibida em bienais nacionais.</p>
+              <div class="arte-ano">2018 · Videoarte</div>
+            </div>
+          </div>
+          <div class="arte-card">
+            <div class="arte-thumb" style="background: linear-gradient(135deg,#EEF2F9,#F9EEF0);">✨</div>
+            <div class="arte-body">
+              <h3>The Death of Michael Jackson</h3>
+              <div class="arte-artista">Zanele Muholi</div>
+              <p>Fotógrafa e artista visual sul-africana que documenta comunidades queer e trans negras com uma estética
+                marcante de intimidade e poder.</p>
+              <div class="arte-ano">2010 · Fotografia</div>
+            </div>
+          </div>
+          <div class="arte-card">
+            <div class="arte-thumb" style="background: linear-gradient(135deg,#EEEEF9,#EEF2F9);">🖌️</div>
+            <div class="arte-body">
+              <h3>Self-Portraits (série)</h3>
+              <div class="arte-artista">Del LaGrace Volcano</div>
+              <p>Fotógrafo e artista intersexo/trans britânico, pioneiro em registrar corpos fora do binário de gênero
+                com beleza e provocação.</p>
+              <div class="arte-ano">1980–presente · Fotografia</div>
+            </div>
+          </div>
+          <div class="arte-card">
+            <div class="arte-thumb" style="background: linear-gradient(135deg,#F9EEF0,#EEEEF9);">🎪</div>
+            <div class="arte-body">
+              <h3>Bicha, Nêga, Sapatão</h3>
+              <div class="arte-artista">Coletivo de artistas trans BR</div>
+              <p>Exposição coletiva itinerante que reúne pinturas, esculturas e arte digital criadas por artistas trans
+                de diferentes regiões do Brasil.</p>
+              <div class="arte-ano">2022 · Exposição coletiva</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Blog ── -->
+  <section id="blog">
+    <div class="container">
+      <p class="section-label">Conteúdo & Notícias</p>
+      <h2 class="section-title">Fique por dentro</h2>
+      <p class="section-body">
+        Artigos, notícias e reflexões sobre saúde, direitos, cultura e vivências da comunidade trans brasileira.
+      </p>
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="blog-thumb thumb-blue">💬</div>
+          <div class="blog-body">
+            <span class="blog-tag">Saúde</span>
+            <h3>Como acessar o Processo Transexualizador pelo SUS em 2025</h3>
+            <p>Um guia prático e atualizado sobre os passos para iniciar o acompanhamento no sistema público de saúde.
+            </p>
+            <div class="blog-meta">
+              <span class="blog-date">12 mai. 2025</span>
+              <a href="#" class="blog-read">Ler artigo →</a>
+            </div>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-thumb thumb-pink">💬</div>
+          <div class="blog-body">
+            <span class="blog-tag">Direitos</span>
+            <h3>Retificação de nome: o que mudou e como fazer em cartório</h3>
+            <p>Entenda o processo atual após a decisão do STF, os documentos necessários e os prazos esperados.</p>
+            <div class="blog-meta">
+              <span class="blog-date">28 abr. 2025</span>
+              <a href="#" class="blog-read">Ler artigo →</a>
+            </div>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-thumb thumb-slate">💬</div>
+          <div class="blog-body">
+            <span class="blog-tag">Comunidade</span>
+            <h3>Visibilidade trans: conheça ONG's feitas para as pessoas trans!</h3>
+            <element class="blog-link">
+            <p>Refletimos que parte da visibilidade, da inclusão e do letramento depende da divulgação 
+              de projetos qque protejam as vivências do grupo abordado. Por isso, selecionamos links 
+              para que sejam de fácil acesso as entidades que se organizam em prol da comunidade trans:
+              <li><a href="https://www.institutotransgente.com/sobrenos">Conheça o Transgente</a></li>
+              <li><a href="https://antrabrasil.org/">Conheça o Antra</a></li>
+              <li><a href="https://www.ibratsp.com/">Conheça o Ibrat</a></li>
+              <li><a href="https://www.casaum.org/">Conheça a Casa1</a></li> 
+            </p>
+          </element>
+            <div class="blog-meta">
+              <span class="blog-date">10 abr. 2025</span>
+              <a href="#" class="blog-read">Ler artigo →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section id="faq">
+    <div class="container">
+      <p class="section-label">Dúvidas frequentes</p>
+      <h2 class="section-title">Perguntas que mais recebemos</h2>
+      <p class="section-body">
+        Reunimos as dúvidas mais comuns sobre identidade de gênero, saúde, direitos e apoio — com respostas claras e
+        acessíveis.
+      </p>
+      <div class="faq-layout">
+        <div>
+          <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.8;">
+            Não encontrou o que procura? Entre em <a href="#contato" style="color:var(--blue); font-weight:500;">contato
+              conosco</a> e responderemos com cuidado.
+          </p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              O que é identidade de gênero?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Identidade de gênero é a percepção interna e individual que cada pessoa tem de si mesma em relação ao
+              gênero — feminino, masculino, não-binário ou outras identidades. Ela pode ou não corresponder ao sexo
+              atribuído ao nascimento, e não depende de aparência, cirurgia ou qualquer outra condição externa.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              Qual a diferença entre transgênero e transexual?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Transgênero é um termo guarda-chuva que inclui todas as pessoas cuja identidade de gênero difere do sexo
+              atribuído ao nascimento. Transexual é frequentemente usado por pessoas que sentem uma forte incongruência
+              entre seu gênero e seu corpo, e que podem buscar intervenções médicas — mas nem toda pessoa trans deseja
+              ou precisa de procedimentos físicos.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              Como funciona a hormonização pelo SUS?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              A hormonioterapia está disponível pelo Processo Transexualizador do SUS. O primeiro passo é buscar um
+              Centro de Referência em Saúde LGBT ou um ambulatório especializado no seu estado. Após avaliação
+              multidisciplinar, o acompanhamento hormonal é iniciado e os medicamentos podem ser obtidos gratuitamente
+              na farmácia popular.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              Preciso de laudo psicológico para mudar meu nome?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Não. Desde a decisão do STF em 2018 (ADI 4275), qualquer pessoa trans pode solicitar a retificação de nome
+              e gênero diretamente em cartório, sem necessidade de laudo médico, psicológico ou cirurgia. Basta
+              comparecer ao cartório de registro civil com documentos de identificação.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              Como apoiar um familiar trans?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              O apoio familiar é um dos fatores que mais impacta positivamente a saúde mental de pessoas trans. Use o
+              nome e pronomes corretos, busque informação em fontes confiáveis, ouça sem julgamento e não trate a
+              identidade da pessoa como uma fase ou problema a ser resolvido. Grupos de apoio a familiares também podem
+              ajudar muito nesse processo.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              O que fazer em caso de discriminação?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Discriminação por identidade de gênero é crime no Brasil desde 2019. Você pode registrar boletim de
+              ocorrência em qualquer delegacia, buscar apoio de organizações LGBT+ locais, acionar o Disque 100
+              (Direitos Humanos) ou procurar a Defensoria Pública do seu estado para orientação jurídica gratuita.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Glossário ── -->
+  <section id="glossario">
+    <div class="container">
+      <p class="section-label">Vocabulário essencial</p>
+      <h2 class="section-title">Glossário de termos trans</h2>
+      <p class="section-body">
+        Entender o vocabulário é o primeiro passo para um diálogo respeitoso. Busque um termo abaixo.
+      </p>
+      <div class="glossario-search-wrap">
+        <span class="search-icon">🔍</span>
+        <input class="glossario-search" type="text" placeholder="Buscar termo..."
+          oninput="filterGlossario(this.value)" />
+      </div>
+      <div class="glossario-grid" id="glossario-grid">
+        <div class="glossario-item" data-term="transgênero">
+          <div class="glossario-term">Transgênero</div>
+          <div class="glossario-def">Pessoa cuja identidade de gênero difere do sexo atribuído ao nascimento. Termo
+            guarda-chuva que engloba diversas identidades.</div>
+        </div>
+        <div class="glossario-item" data-term="transexual">
+          <div class="glossario-term">Transexual</div>
+          <div class="glossario-def">Pessoa trans que frequentemente busca adequação corporal por meio de
+            hormonioterapia ou cirurgias, vivenciando forte incongruência com o sexo de nascimento.</div>
+        </div>
+        <div class="glossario-item" data-term="cisgênero">
+          <div class="glossario-term">Cisgênero (Cis)</div>
+          <div class="glossario-def">Pessoa cuja identidade de gênero corresponde ao sexo atribuído ao nascimento. O
+            prefixo "cis" vem do latim e significa "do mesmo lado".</div>
+        </div>
+        <div class="glossario-item" data-term="não-binário">
+          <div class="glossario-term">Não-binário</div>
+          <div class="glossario-def">Identidade de gênero que não se encaixa exclusivamente nas categorias de homem ou
+            mulher. Pessoas não-binárias podem se identificar com ambos, nenhum ou outros gêneros.</div>
+        </div>
+        <div class="glossario-item" data-term="pronomes">
+          <div class="glossario-term">Pronomes</div>
+          <div class="glossario-def">Classe gramatical de palavras usadas para se referir a alguém (ela/dela, ele/dele,
+            elu/delu). Usar os
+            pronomes corretos de uma pessoa é um ato básico de respeito, que não depende do indivíduo ser cisgênero ou
+            transgênero.</div>
+        </div>
+        <div class="glossario-item" data-term="nome social">
+          <div class="glossario-term">Nome Social</div>
+          <div class="glossario-def">Nome pelo qual uma pessoa trans deseja ser chamada, diferente do nome registrado em
+            documentos. Seu uso é garantido por lei em instituições públicas federais. O termo "nome social" é, na
+            verdade, o nome verdadeiro da pessoa que se apresenta como tal, pois é o que a representa, da mesma forma
+            que o nome de registro pode representar a identidade de gênero de uma pessoa cisgênero.</div>
+        </div>
+        <div class="glossario-item" data-term="transição">
+          <div class="glossario-term">Transição</div>
+          <div class="glossario-def">Processo pelo qual uma pessoa trans passa para alinhar sua expressão e/ou corpo à
+            sua identidade de gênero. Pode incluir mudanças sociais, hormonais e/ou cirúrgicas.</div>
+        </div>
+        <div class="glossario-item" data-term="deadname">
+          <div class="glossario-term">Deadname</div>
+          <div class="glossario-def">Nome de registro anterior de uma pessoa trans, que ela não usa mais. Chamar alguém
+            pelo deadname sem permissão é considerado desrespeitoso e doloroso.</div>
+        </div>
+        <div class="glossario-item" data-term="disforia">
+          <div class="glossario-term">Disforia de Gênero</div>
+          <div class="glossario-def">Sofrimento causado pela incongruência entre a identidade de gênero e as
+            características físicas ou o papel de gênero atribuído ao nascimento. Nem toda pessoa trans experiencia
+            disforia.</div>
+        </div>
+        <div class="glossario-item" data-term="euforia">
+          <div class="glossario-term">Euforia de Gênero</div>
+          <div class="glossario-def">Sentimento de alegria e bem-estar quando a expressão ou o corpo de alguém está
+            alinhado com sua identidade de gênero. Frequentemente descrita como o oposto da disforia.</div>
+        </div>
+        <div class="glossario-item" data-term="passing">
+          <div class="glossario-term">Passing</div>
+          <div class="glossario-def">Quando uma pessoa trans é percebida pelos outros como sendo do gênero com que se
+            identifica, sem ser lida como trans. Nem toda pessoa trans deseja ou prioriza o passing, que é uma palavra
+            que nem todas as pessoas trans utilizam ou acham adequada, pois reforça a ideia de que devem seguir
+            estereótipos de gênero que não as cabem.</div>
+        </div>
+        <div class="glossario-item" data-term="aliado">
+          <div class="glossario-term">Aliado / Aliada</div>
+          <div class="glossario-def">Pessoa cisgênero que apoia ativamente os direitos e o bem-estar da comunidade
+            trans, usando seu privilégio para amplificar vozes trans e combater a transfobia.</div>
+        </div>
+        <div class="glossario-empty" id="glossario-empty">Nenhum termo encontrado. Tente outra busca.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contato ── -->
+  <section id="contato">
+    <div class="container">
+      <div class="contato-inner">
+        <div>
+          <p class="section-label">Entre em contato</p>
+          <h2 class="section-title">Fale com a Trans Pride, Trans Light</h2>
+          <p class="section-body">
+            Tem dúvidas, quer compartilhar sua história ou precisa de apoio? Nossa equipe está aqui para ouvir com
+            respeito e cuidado.
+          </p>
+          <div class="contato-info">
+            <h3>Outros canais</h3>
+            <p>Estamos disponíveis de segunda a sexta, das 8h às 20h. Para urgências, veja nosso canal 24h.</p>
+            <div class="contact-channels">
+              <div class="channel">
+                <div class="channel-dot"></div>
+                <div><span>Email: </span><a
+                    href="mailto:contato@transpridetranslight.org">contato@transpridetranslight.org</a></div>
+              </div>
+              <div class="channel">
+                <div class="channel-dot" style="background:var(--pink)"></div>
+                <div><span>WhatsApp de escuta 24h: </span><a href="#">(11) 9 0000-0000</a></div>
+              </div>
+              <div class="channel">
+                <div class="channel-dot" style="background:#6B7DB3"></div>
+                <div><span>Instagram: </span><a href="#">@ourlight_</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="contact-form">
+            <div class="form-group">
+              <label for="nome">Nome (ou como prefere ser chamade)</label>
+              <input type="text" id="nome" placeholder="Seu nome ou apelido" />
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" placeholder="seu@email.com" />
+              <span class="form-note">Suas informações são tratadas com total sigilo.</span>
+            </div>
+            <div class="form-group">
+              <label for="assunto">Assunto</label>
+              <select id="assunto">
+                <option value="">Selecione um tema</option>
+                <option>Saúde e hormonização</option>
+                <option>Retificação de documentos</option>
+                <option>Apoio emocional</option>
+                <option>Apoio à família</option>
+                <option>Denúncia de discriminação</option>
+                <option>Interesse por aprendizado e letramento</option>
+                <option>Parcerias e colaborações</option>
+                <option>Outro assunto/sugestões</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" placeholder="Conte-nos como podemos ajudar..."></textarea>
+            </div>
+            <button class="btn-primary" style="border:none; cursor:pointer; font-family:'Inter',sans-serif;">
+              Enviar mensagem
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Doação banner -->
+      <div class="donate-banner">
+        <div class="donate-text">
+          <h3>Apoie este projeto 💛</h3>
+          <p>Sua contribuição mantém este espaço gratuito e acessível para toda a comunidade trans brasileira. Qualquer
+            valor faz diferença.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="gradient-line"></div>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Trans Pride, <span>Trans Light</span></div>
+      <ul class="footer-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#apoio">Apoio</a></li>
+        <li><a href="#cultura">Cultura</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#glossario">Glossário</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="#" class="social-icon" aria-label="Instagram" title="Instagram">📸</a>
+        <a href="#" class="social-icon" aria-label="Facebook" title="Facebook">💙</a>
+        <a href="#" class="social-icon" aria-label="Twitter / X" title="Twitter / X">🐦</a>
+        <a href="#" class="social-icon" aria-label="YouTube" title="YouTube">▶️</a>
+        <a href="#" class="social-icon" aria-label="WhatsApp" title="WhatsApp">💬</a>
+      </div>
+      <p>© 2025 Trans Pride, Trans Light · Feito com cuidado para a comunidade trans brasileira.</p>
+      <p style="margin-top:0.5rem; font-size:0.75rem;">
+        Este é um modelo de site. Em produção, substitua os dados de contato e textos pelo conteúdo real da sua
+        organização.
+      </p>
+    </div>
+  </footer>
+
 </body>
+<script>
+  // ── FAQ toggle ──────────────────────────────────────
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+    document.querySelectorAll('.faq-question').forEach(b => {
+      b.setAttribute('aria-expanded', 'false');
+      b.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) {
+      btn.setAttribute('aria-expanded', 'true');
+      answer.classList.add('open');
+    }
+  }
+
+  // ── Glossário filter ────────────────────────────────
+  function filterGlossario(query) {
+    const items = document.querySelectorAll('#glossario-grid .glossario-item');
+    const empty = document.getElementById('glossario-empty');
+    const q = query.toLowerCase().trim();
+    let visible = 0;
+    items.forEach(item => {
+      const term = item.dataset.term || '';
+      const def = item.querySelector('.glossario-def').textContent.toLowerCase();
+      const match = !q || term.includes(q) || def.includes(q);
+      item.classList.toggle('hidden', !match);
+      if (match) visible++;
+    });
+    empty.style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  // ── Cultura tabs ────────────────────────────────────
+  function switchTab(btn, panelId) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.cultura-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + panelId).classList.add('active');
+  }
+</script>
+
 </html>
